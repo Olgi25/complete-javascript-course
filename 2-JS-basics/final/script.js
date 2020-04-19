@@ -1,12 +1,12 @@
 /*****************************
 * Variables and data types
 */
-/*
-var firstName = 'John';
+
+var firstName = 'Olgi';
 console.log(firstName);
 
 var lastName = 'Smith';
-var age = 28;
+var age = 34;
 
 var fullAge = true;
 console.log(fullAge);
@@ -16,23 +16,22 @@ console.log(job);
 
 job = 'Teacher';
 console.log(job);
-
+/*
 // Variable naming rules
+can not start variable with number, it cannot contain strange character like / and cannot use commands as variable name
 var _3years = 3;
 var johnMark = 'John and MArk';
 var if = 23;
 */
 
-
-
 /*****************************
 * Variable mutation and type coercion
 */
-/*
+
 var firstName = 'John';
 var age = 28;
 
-// Type coercion
+// Type coercion > a JS átalakítja részünkre az elemeket, nem kell külön megadni a típusukat, mint pl szám, mondat,stb.
 console.log(firstName + ' ' + age);
 
 var job, isMarried;
@@ -42,29 +41,35 @@ isMarried = false;
 console.log(firstName + ' is a ' + age + ' year old ' + job + '. Is he married? ' + isMarried);
 
 // Variable mutation
+
 age = 'twenty eight';
 job = 'driver';
 
+/*
+// alert creating a pop-up window
 alert(firstName + ' is a ' + age + ' year old ' + job + '. Is he married? ' + isMarried);
 
+// prompt meg kell adni a választ a kérdésre a felugró ablakban, utána ez jelenik meg a console-ban
 var lastName = prompt('What is his last Name?');
 console.log(firstName + ' ' + lastName);
-*/
 
+*/
 
 
 /*****************************
 * Basic operators
 */
-/*
+
 var year, yearJohn, yearMark;
-now = 2018;
+now = 2020;
 ageJohn = 28;
 ageMark = 33;
 
+console.log(yearJohn);
+
 // Math operators
 yearJohn = now - ageJohn;
-yeahMark = now - ageMark;
+yearMark = now - ageMark;
 
 console.log(yearJohn);
 
@@ -84,8 +89,6 @@ console.log(typeof ageJohn);
 console.log(typeof 'Mark is older tha John');
 var x;
 console.log(typeof x);
-*/
-
 
 
 /*****************************
