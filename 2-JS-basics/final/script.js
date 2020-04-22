@@ -94,8 +94,8 @@ console.log(typeof x);
 /*****************************
 * Operator precedence
 */
-/*
-var now = 2018;
+
+var now = 2020;
 var yearJohn = 1989;
 var fullAge = 18;
 
@@ -120,10 +120,10 @@ x *= 2;
 console.log(x);
 x += 10;
 console.log(x);
-x--;
+x--; //kivon egyet, azaz x = x - 1
 console.log(x);
-*/
-
+x++; //hozzáad egyet, azaz x = x + 1
+console.log(x);
 
 
 /*****************************
@@ -131,7 +131,8 @@ console.log(x);
 */
 
 /*
-Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
+Mark and John are trying to compare their BMI (Body Mass Index), 
+which is calculated using the formula: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
 
 1. Store Mark's and John's mass and height in variables
 2. Calculate both their BMIs
@@ -140,6 +141,19 @@ Mark and John are trying to compare their BMI (Body Mass Index), which is calcul
 
 GOOD LUCK 😀
 */
+
+var heightMark = 1.85;
+var heightJohn = 1.78;
+var massMark = 75;
+var massJohn = 72;
+
+x = massMark / (heightMark * heightMark);
+y = massJohn / (heightJohn * heightJohn);
+
+console.log (x , y);
+// var BMI = prompt("Is Mark's BMI higher than John's?");
+console.log("Is Mark's BMI higher than John's? " + (x > y));
+
 /*
 var massMark = 78; // kg
 var heightMark = 1.69; // meters
@@ -155,12 +169,10 @@ var markHigherBMI = BMIMark > BMIJohn;
 console.log('Is Mark\'s BMI higher than John\'s? ' + markHigherBMI);
 */
 
-
-
 /*****************************
 * If / else statements
 */
-/*
+
 var firstName = 'John';
 var civilStatus = 'single';
 
@@ -192,14 +204,12 @@ if (BMIMark > BMIJohn) {
 } else {
     console.log('John\'s BMI is higher than Marks\'s.');
 }
-*/
-
 
 
 /*****************************
 * Boolean logic
 */
-/*
+
 var firstName = 'John';
 var age = 20;
 
@@ -212,14 +222,14 @@ if (age < 13) {
 } else {
     console.log(firstName + ' is a man.');
 }
-*/
+
 
 
 
 /*****************************
 * The Ternary Operator and Switch Statements
 */
-/*
+
 var firstName = 'John';
 var age = 14;
 
@@ -229,11 +239,12 @@ age >= 18 ? console.log(firstName + ' drinks beer.') : console.log(firstName + '
 var drink = age >= 18 ? 'beer' : 'juice';
 console.log(drink);
 
-(if (age >= 18) {
+// it is the same with if
+/*if (age >= 18) {
     var drink = 'beer';
 } else {
     var drink = 'juice';
-}
+} */
 
 // Switch statement
 var job = 'instructor';
@@ -266,14 +277,11 @@ switch (true) {
     default:
         console.log(firstName + ' is a man.');
 }
-*/
-
-
 
 /*****************************
 * Truthy and Falsy values and equality operators
 */
-/*
+
 // falsy values: undefined, null, 0, '', NaN
 // truthy values: NOT falsy values
 
@@ -288,10 +296,10 @@ if (height || height === 0) {
 }
 
 // Equality operators
-if (height === '23') {
+if (height == '23') {
     console.log('The == operator does type coercion!');
 }
-*/
+
 
 
 
@@ -311,6 +319,39 @@ John and Mike both play basketball in different teams. In the latest 3 games, Jo
 
 GOOD LUCK 😀
 */
+var scoreJohn = (89 + 120 + 103) / 3;
+    console.log(scoreJohn);
+
+var scoreMike = (116 + 94 + 123) / 3;
+    console.log(scoreMike);
+
+switch (true) {
+    case scoreJohn > scoreMike:
+        console.log("The winner is John's Team with average point of " + scoreJohn);
+        break;
+    case scoreJohn < scoreMike:
+        console.log("The winner is Mike's Team with average point of " + scoreMike);
+        break;
+    default:
+        console.log('It is a draw!')
+}
+var scoreMary = (97 + 134 + 105) / 3;
+    console.log(scoreMary);
+
+switch (true) {
+    case scoreJohn > scoreMike && scoreJohn > scoreMary:
+        console.log("The winner is John's Team with average point of " + scoreJohn);
+        break;
+    case scoreMike > scoreJohn && scoreMike > scoreMary:
+        console.log("The winner is Mike's Team with average point of " + scoreMike);
+        break;
+    case scoreMary > scoreJohn && scoreMary > scoreMike:
+        console.log("The winner is Mary's Team with average point of " + scoreMary);
+    break;
+    default:
+         console.log('It is a draw!')
+}
+
 /*
 var scoreJohn = (189 + 120 + 103) / 3;
 var scoreMike = (129 + 94 + 123) / 3;
@@ -336,8 +377,6 @@ if (scoreJohn > scoreMike) {
     console.log('There is a draw');
 }
 */
-
-
 
 /*****************************
 * Functions
