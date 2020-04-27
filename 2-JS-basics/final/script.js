@@ -381,9 +381,9 @@ if (scoreJohn > scoreMike) {
 /*****************************
 * Functions
 */
-/*
+
 function calculateAge(birthYear) {
-    return 2018 - birthYear;
+    return 2020 - birthYear;
 }
 
 var ageJohn = calculateAge(1990);
@@ -407,18 +407,19 @@ function yearsUntilRetirement(year, firstName) {
 yearsUntilRetirement(1990, 'John');
 yearsUntilRetirement(1948, 'Mike');
 yearsUntilRetirement(1969, 'Jane');
-*/
+
 
 
 
 /*****************************
 * Function Statements and Expressions
 */
-/*
+
 // Function declaration
 // function whatDoYouDo(job, firstName) {}
 
 // Function expression
+// the return keyword is already finishes the function
 var whatDoYouDo = function(job, firstName) {
     switch(job) {
         case 'teacher':
@@ -435,14 +436,12 @@ var whatDoYouDo = function(job, firstName) {
 console.log(whatDoYouDo('teacher', 'John'));
 console.log(whatDoYouDo('designer', 'Jane'));
 console.log(whatDoYouDo('retired', 'Mark'));
-*/
-
 
 
 /*****************************
 * Arrays
 */
-/*
+
 // Initialize new array
 var names = ['John', 'Mark', 'Jane'];
 var years = new Array(1990, 1969, 1948);
@@ -458,20 +457,20 @@ console.log(names);
 // Different data types
 var john = ['John', 'Smith', 1990, 'designer', false];
 
-john.push('blue');
-john.unshift('Mr.');
+john.push('blue'); //add a last element
+john.unshift('Mr.'); //add the first element
 console.log(john);
 
+john.pop(); //remove last element from the end
 john.pop();
-john.pop();
-john.shift();
+john.shift(); // remove the first element
 console.log(john);
 
-console.log(john.indexOf(23));
+console.log(john.indexOf(23)); //if we ask something which is not exists in the array, the log is -1
 
 var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer' : 'John IS a designer';
 console.log(isDesigner);
-*/
+
 
 
 
@@ -492,15 +491,14 @@ In the end, John would like to have 2 arrays:
 
 GOOD LUCK 😀
 */
-/*
 function tipCalculator(bill) {
     var percentage;
     if (bill < 50) {
-        percentage = .2;
+        percentage = 0.2;
     } else if (bill >= 50 && bill < 200) {
-        percentage = .15;
+        percentage = 0.15; 
     } else {
-        percentage = .1;
+        percentage = 0.1;
     }
     return percentage * bill;
 }
@@ -509,20 +507,19 @@ var bills = [124, 48, 268];
 var tips = [tipCalculator(bills[0]),
             tipCalculator(bills[1]),
             tipCalculator(bills[2])];
-
-var finalValues = [bills[0] + tips[0],
+var finalValues = [bills[0] + tips[0],            
                    bills[1] + tips[1],
                    bills[2] + tips[2]];
 
-console.log(tips, finalValues);
-*/
+console.log(tips);
+console.log(finalValues);
 
 
 
 /*****************************
 * Objects and properties
 */
-/*
+
 // Object literal
 var john = {
     firstName: 'John',
@@ -533,6 +530,7 @@ var john = {
     isMarried: false
 };
 
+console.log(john);
 console.log(john.firstName);
 console.log(john['lastName']);
 var x = 'birthYear';
@@ -548,14 +546,14 @@ jane.firstName = 'Jane';
 jane.birthYear = 1969;
 jane['lastName'] = 'Smith';
 console.log(jane);
-*/
+
 
 
 
 /*****************************
 * Objects and methods
 */
-/*
+
 var john = {
     firstName: 'John',
     lastName: 'Smith',
@@ -564,14 +562,12 @@ var john = {
     job: 'teacher',
     isMarried: false,
     calcAge: function() {
-        this.age = 2018 - this.birthYear;
+        this.age = 2020 - this.birthYear;
     }
 };
 
 john.calcAge();
 console.log(john);
-*/
-
 
 
 /*****************************
@@ -588,27 +584,41 @@ Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and heig
 
 GOOD LUCK 😀
 */
-/*
-var john = {
-    fullName: 'John Smith',
-    mass: 110,
-    height: 1.95,
-    calcBMI: function() {
-        this.bmi = this.mass / (this.height * this.height);
-        return this.bmi;
-    }
-}
 
 var mark = {
-    fullName: 'Mark Miller',
-    mass: 78,
-    height: 1.69,
+    firstName: 'Mark',
+    lastName: 'Mister',
+    weight: 85,
+    height: 1.87,
     calcBMI: function() {
-        this.bmi = this.mass / (this.height * this.height);
-        return this.bmi;
+        this.BMI = this.weight / (this.height * this.height);
     }
+};
+
+
+
+var john = new Object();
+    john.firstName = 'John';
+    john.lastName = 'Master';
+    john.weight = 79;
+    john.height = 1.73;
+    john.calcBMI = function() {
+        this.BMI = this.weight / (this.height * this.height);
+    }
+
+mark.calcBMI();    
+john.calcBMI(); 
+console.log(mark, john);
+
+if (mark.BMI > john.BMI) {
+    console.log(mark.firstName + "'s BMI is higher with " + mark.BMI);
+} else if (john.BMI > mark.BMI) {
+    console.log(john.firstName + "'s BMI is higher with " + john.BMI);
+} else {
+    console.log(john.firstName + "'s BMI and " + mark.firstName + "'s is equal with " + john.BMI);
 }
 
+/*
 if (john.calcBMI() > mark.calcBMI()) {
     console.log(john.fullName + ' has a higher BMI of ' + john.bmi);
 } else if (mark.bmi > john.bmi) {
